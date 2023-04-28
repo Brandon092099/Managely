@@ -27,6 +27,16 @@ function Home() {
       .catch(error => console.error(error));
   }, []);
 
+  function convertDate(date) {
+    if (date == undefined) {
+      return date;
+    }
+    console.log(date)
+    let dateArray = date.split(" ")
+    let newDate = dateArray[2] + " " + dateArray[1] + ", " + dateArray[3];
+    return (newDate);
+  }
+
   return (
     <div>
       <NavBar/>
@@ -35,7 +45,7 @@ function Home() {
           Announcements
         </div>
         <div className='Hannouncements'>
-          Progress report 3 due 4/7/23
+          Product Presentation: 04/17/23
         </div>
       </div>
       <div className='HpagesContainer'>
@@ -64,7 +74,7 @@ function Home() {
                 <td style={{ border: '1px solid black' }}>{row.fName}</td>
                 <td style={{ border: '1px solid black' }}>{row.lName}</td>
                 <td style={{ border: '1px solid black' }}>{row.gender}</td>
-                <td style={{ border: '1px solid black' }}>{row.dateOfBirth}</td>
+                <td style={{ border: '1px solid black' }}>{convertDate(row.dateOfBirth)}</td>
                 <td style={{ border: '1px solid black' }}>{row.termInfo}</td>
                 <td style={{ border: '1px solid black' }}>{row.salary}</td>
               </tr>
@@ -95,7 +105,7 @@ function Home() {
         {invData.map((row) => (
           <tr key={row.invenID}>
                 <td style={{ border: '1px solid black' }}>{row.typeID}</td>
-                <td style={{ border: '1px solid black' }}>{row.invID}</td>
+                <td style={{ border: '1px solid black' }}>{row.invenID}</td>
                 <td style={{ border: '1px solid black' }}>{row.name}</td>
                 <td style={{ border: '1px solid black' }}>{row.brand}</td>
                 <td style={{ border: '1px solid black' }}>{row.price}</td>

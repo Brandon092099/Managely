@@ -7,9 +7,7 @@ function NavBar() {
   
   return (
     <div>
-      <div className='Navtitle'>
-        Managely
-      </div>
+      <img className='logo' title="Managely Logo" src='/images/managely_logo.png' alt="managely logo" />
       <div className='Navcontainer'>
         <Link className='Navitem' to='/Home'>
           Home

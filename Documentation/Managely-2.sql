@@ -115,6 +115,9 @@ CREATE TABLE `Login details` (
 INSERT INTO `Login details` (`ID`, `username`, `password`, `email`) VALUES
 (12425, 'Default', 'nice', 'default@gmail.com');
 
+INSERT INTO `Login details` (`ID`, `username`, `password`, `email`) VALUES
+(12427, 'Default', 'nice', 'defaultEmployee@gmail.com');
+
 -- --------------------------------------------------------
 
 --

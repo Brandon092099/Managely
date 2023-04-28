@@ -37,10 +37,6 @@
     text-decoration: none;
 }
 
-Link {
-    text-decoration: none;
-}
-
 .HpageBox {
     display: flex;
     flex-direction: column;

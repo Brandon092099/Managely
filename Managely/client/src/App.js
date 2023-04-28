@@ -7,6 +7,8 @@ import Home from './Pages/Home';
 import Employees from './Pages/Employees';
 import Inventory from './Pages/Inventory';
 import Login from './Pages/Login';
+import EmployeeHome from './Pages/EmployeeHome';
+import EmployeeInventory from './Pages/EmployeeInventory';
 
 function App() {
   return (
@@ -31,6 +33,10 @@ function App() {
           with exact path "/contactus", in 
           component props we passes the imported component*/}
           <Route path="/Inventory" element={<Inventory/>} />
+
+          <Route path="/EmployeeInventory" element={<EmployeeInventory/>} />
+
+          <Route path="/EmployeeHome" element={<EmployeeHome/>} />
         </Routes>
       </Router>
     </>

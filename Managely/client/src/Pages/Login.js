@@ -17,7 +17,12 @@ function Login() {
         password,
       });
       if (response.data.success) {
-        window.location.href = "/Home";
+        if (response.data.admin) {
+          window.location.href = "/Home";
+        } else {
+          window.location.href = "/EmployeeHome";
+        }
+        
       } else {
         setMessage("Invalid email or password");
       }
@@ -30,10 +35,8 @@ function Login() {
 
   return (
     <div>
-      <div className='Logintitle'>
-        Managely
-      </div>
       <form className='Logincontainer' onSubmit={handleSubmit}>
+      <img className='logo' title="Managely Logo" src='/images/managely_logo.png' alt="managely logo" />
           <input
             placeholder='email'
             className='Loginitem'
@@ -52,9 +55,6 @@ function Login() {
         <br />
         {message && <p className='message'>{message}</p>}
         <button className='LoginsubmitButton' type="submit">Submit</button>
-        <a className='LoginforgotP' href='/'>
-          Forgot Password?
-        </a>
       </form>
       
     </div>

@@ -11,6 +11,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 300px;
 }
 
 .Loginitem {
@@ -45,4 +46,15 @@
 .message{
     color: #c25757;
     text-align: center;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;;
+}
+
+.Logincontainer {
+    display: flex;
+    justify-content: center;
+
 }

@@ -61,7 +61,7 @@ function Employees() {
   const handleEdit = row => {
     setEditingRow(row);
     setNewRow(row);
-    window.location.reload(false);
+
   };
 
   const handleUpdate = event => {
@@ -136,6 +136,15 @@ function Employees() {
   function handleDownloadPDF() {
     downloadPDF();
   }
+
+  function convertDate(date) {
+    if (date == undefined) {
+      return date;
+    }
+    let dateArray = date.split(" ")
+    let newDate = dateArray[2] + " " + dateArray[1] + ", " + dateArray[3];
+    return (newDate);
+  }
   
   return (
     <div>
@@ -152,7 +161,7 @@ function Employees() {
           <th>fName</th>
           <th>lName</th>
           <th>gender</th>
-          <th>dateOfBirth</th>
+          <th>dateOfBirth*</th>
           <th>termInfo</th>
           <th>salary</th>
           <th>Actions</th>
@@ -165,7 +174,7 @@ function Employees() {
                 <td style={{ border: '1px solid black' }}>{row.fName}</td>
                 <td style={{ border: '1px solid black' }}>{row.lName}</td>
                 <td style={{ border: '1px solid black' }}>{row.gender}</td>
-                <td style={{ border: '1px solid black' }}>{row.dateOfBirth}</td>
+                <td style={{ border: '1px solid black' }}>{convertDate(row.dateOfBirth)}</td>
                 <td style={{ border: '1px solid black' }}>{row.termInfo}</td>
                 <td style={{ border: '1px solid black' }}>{row.salary}</td>
                 <td>
@@ -241,7 +250,9 @@ function Employees() {
             </tr>
           </tbody>
         </table>
+        
         </div>
+        <p className='note'>* Date input format: yyyy-mm-dd</p>
       </div>
       <div className='EButtoncontainer'>
         <button className='EButtonitem' onClick={handleDownloadPDF}>Download PDF Report</button>
